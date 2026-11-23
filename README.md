@@ -17,6 +17,6 @@ Upload tarball as a github new release,
 then finish ebuild
 ```bash
 popd
-sed -iE 's/^" #(.*-vendor.tar.xz")$/\1/g' "$( find . | grep '\.ebuild$' | sort -rV | head -n1 )"
+sed -E 's/^" #(.*-vendor.tar.xz")$/\1/g' -i "$( find . | grep '\.ebuild$' | sort -rV | head -n1 )"
 ebuild "$( find . | grep '\.ebuild' | sort -rV | head -n1 )" digest clean install && "ebuild is ready"
 ```
