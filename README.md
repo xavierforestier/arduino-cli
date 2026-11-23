@@ -18,5 +18,5 @@ then finish ebuild
 ```bash
 popd
 sed -E 's/^" #(.*-vendor.tar.xz")$/\1/g' -i "$( find . | grep '\.ebuild$' | sort -rV | head -n1 )"
-ebuild -q "$( find . | grep '\.ebuild' | sort -rV | head -n1 )" digest clean install && echo "ebuild is ready"
+ebuild "$( find . | grep '\.ebuild' | sort -rV | head -n1 )" digest clean install
 ```
